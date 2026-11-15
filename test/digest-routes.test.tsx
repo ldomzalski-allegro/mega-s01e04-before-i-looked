@@ -98,7 +98,7 @@ describe('digest routes', () => {
     expect(sortedJobs).toEqual([unsafeJob, 'Alpha', 'alpha', 'zeta']);
 
     const renderedJobs = [
-      '&lt;script&gt;alert("x")&lt;/script&gt;',
+      '&lt;script&gt;alert(&quot;x&quot;)&lt;/script&gt;',
       'Alpha',
       'alpha',
       'zeta',
