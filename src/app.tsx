@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import { loadConfig, type RigConfig } from './config.js';
+import { registerDigestJson } from './digest/json.js';
 import { readNight } from './digest/reader.js';
 import { lane } from './lane.js';
 import { readStatus } from './status.js';
@@ -31,6 +32,8 @@ export function createApp(config: RigConfig = loadConfig()) {
       </Layout>,
     );
   });
+
+  registerDigestJson(app, config);
 
   return app;
 }
